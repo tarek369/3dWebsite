@@ -3,7 +3,7 @@
 .lang-toggle {
   position: absolute;
   top: 14px;
-  right: 60px;
+  right: -2px;
   display: flex;
   align-items: center;
   justify-content: center;
