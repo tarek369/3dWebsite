@@ -20,25 +20,6 @@ function initContactAnimations() {
     observer.observe(element);
   });
 }
-  const animatedElements = document.querySelectorAll('[data-contact-animate]');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    root: null,
-    threshold: 0.2,
-    rootMargin: '0px'
-  });
-  
-  animatedElements.forEach(element => {
-    observer.observe(element);
-  });
-}
 
 // Form submission handler
 function initContactForm() {

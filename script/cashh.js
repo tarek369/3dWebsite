@@ -286,5 +286,3 @@ window.addEventListener('langChanged', (e) => {
     }
   }
 });
-  }
-});
