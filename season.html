@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seasonal Video Viewer</title>
-    <link rel="stylesheet" href="css/season.css">
+     <link rel="stylesheet" href="css/season.css">
+     <link rel="stylesheet" href="css/translations.css" />
 </head>
 <body>
     <!-- Main container -->
@@ -36,22 +37,23 @@
             </div>
             
             <div class="season-icons">
-                <div class="season-icon active" data-season="0">
-                    <span>Sunny</span>
-                </div>
-                <div class="season-icon" data-season="1">
-                    <span>Foggy</span>
-                </div>
-                <div class="season-icon" data-season="2">
-                    <span>Rainy</span>
-                </div>
-                <div class="season-icon" data-season="3">
-                    <span>Snowy</span>
-                </div>
+             <div class="season-icon active" data-season="0">
+                 <span data-i18n="season.sunny">Sunny</span>
+                 </div>
+                 <div class="season-icon" data-season="1">
+                     <span data-i18n="season.foggy">Foggy</span>
+                 </div>
+                 <div class="season-icon" data-season="2">
+                     <span data-i18n="season.rainy">Rainy</span>
+                 </div>
+                 <div class="season-icon" data-season="3">
+                     <span data-i18n="season.snowy">Snowy</span>
+                 </div>
             </div>
         </div>
     </div>
 
-    <script src="script/season.js"></script>
+     <script src="script/translations.js" defer></script>
+     <script src="script/season.js"></script>
 </body>
 </html>

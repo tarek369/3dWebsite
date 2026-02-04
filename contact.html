@@ -8,6 +8,7 @@
   <!-- Google font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">  
   <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/translations.css" />
   <link rel="icon" type="image/x-icon" href="res/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -24,21 +25,20 @@
         </a>
       </div>
       <nav class="nav-menu">
-        <a href="index.html#about">ABOUT</a>
-        <a href="index.html#case">CASE STUDY</a>
-        <a href="index.html#services">SERVICES</a>
+        <a href="index.html#about" data-i18n="nav.about">ABOUT</a>
+        <a href="index.html#case" data-i18n="nav.case">CASE STUDY</a>
+        <a href="index.html#services" data-i18n="nav.services">SERVICES</a>
         <!-- <a href="news.html">NEWS</a> -->
         <!-- <a href="index.html#team">TEAM</a> -->
-        <a href="contact.html" class="active">CONTACT</a>
+        <a href="contact.html" class="active" data-i18n="nav.contact">CONTACT</a>
       </nav>
     </div>
   </header>
 
-  <!-- Contact Hero Section -->
   <section class="contact-hero">
     <div class="contact-hero-container">
-      <div class="hero-label" data-contact-animate>REACH OUT</div>
-      <h1 class="hero-title" data-contact-animate>Get in touch</h1>
+      <div class="hero-label" data-contact-animate data-i18n="contact.hero.label">REACH OUT</div>
+      <h1 class="hero-title" data-contact-animate data-i18n="contact.hero.title">Get in touch</h1>
       <div class="hero-line" data-contact-animate></div>
     </div>
   </section>
@@ -47,9 +47,8 @@
   <section class="contact-content">
     <div class="contact-content-container">
       
-      <!-- Left Side - Contact Info -->
       <div class="contact-info">
-        <p class="contact-intro" data-contact-animate>
+        <p class="contact-intro" data-contact-animate data-i18n="contact.intro">
           Ready to build your digital twin?<br>
           Contact our team to discuss how our 3D modeling and AI solutions can transform your operations.
         </p>
@@ -57,9 +56,8 @@
         <!-- Contact Details -->
         <div class="contact-details">
           
-          <!-- Estonia -->
           <div class="contact-block" data-contact-animate>
-            <div class="contact-block-label">ESTONIA</div>
+            <div class="contact-block-label" data-i18n="contact.estonia">ESTONIA</div>
             <div class="contact-block-content">
               <div class="contact-item">
                 <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -90,51 +88,50 @@
       <div class="contact-form-wrapper" data-contact-animate>
         <form class="contact-form" id="contactForm">
           
-          <!-- Name Field -->
-          <div class="form-group">
-            <label for="name">NAME</label>
+           <div class="form-group">
+            <label for="name" data-i18n="form.name">NAME</label>
             <input 
               type="text" 
               id="name" 
               name="name" 
               required
+              data-i18n="form.name.placeholder"
               placeholder="Your name">
           </div>
 
-          <!-- Email Field -->
-          <div class="form-group">
-            <label for="email">EMAIL</label>
+           <div class="form-group">
+            <label for="email" data-i18n="form.email">EMAIL</label>
             <input 
               type="email" 
               id="email" 
               name="email" 
               required
+              data-i18n="form.email.placeholder"
               placeholder="your.email@example.com">
           </div>
 
-          <!-- Phone Field -->
-          <div class="form-group">
-            <label for="phone">PHONE</label>
+           <div class="form-group">
+            <label for="phone" data-i18n="form.phone">PHONE</label>
             <input 
               type="tel" 
               id="phone" 
               name="phone"
+              data-i18n="form.phone.placeholder"
               placeholder="+1 (555) 000-0000">
           </div>
 
-          <!-- Message Field -->
-          <div class="form-group form-group-full">
-            <label for="message">YOUR MESSAGE</label>
+           <div class="form-group form-group-full">
+            <label for="message" data-i18n="form.message">YOUR MESSAGE</label>
             <textarea 
               id="message" 
               name="message" 
               rows="6" 
               required
+              data-i18n="form.message.placeholder"
               placeholder="Tell us about your project..."></textarea>
           </div>
 
-          <!-- Submit Button -->
-          <button type="submit" class="submit-btn">
+           <button type="submit" class="submit-btn" data-i18n="contact.send">
             Send enquiry
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -143,24 +140,23 @@
 
         </form>
 
-        <!-- Success Message -->
-        <div class="form-success" id="formSuccess">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
-          <h3>Thank you!</h3>
-          <p>Your message has been sent successfully. We'll get back to you soon.</p>
-        </div>
+         <div class="form-success" id="formSuccess">
+           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+             <polyline points="22 4 12 14.01 9 11.01"></polyline>
+           </svg>
+           <h3 data-i18n="contact.success.title">Thank you!</h3>
+           <p data-i18n="contact.success.message">Your message has been sent successfully. We'll get back to you soon.</p>
+         </div>
       </div>
 
     </div>
   </section>
 
 <!-- Footer -->
-<footer class="contact-footer">
+ <footer class="contact-footer">
   <div class="footer-content">
-    <p>© 2025 3DXENON — all rights reserved</p>
+    <p data-i18n="footer.copyright">© 2026 3DXENON — all rights reserved</p>
 
     <div class="footer-social">
       
@@ -184,6 +180,7 @@
 </footer>
 
 
+  <script src="script/translations.js" defer></script>
   <script src="script/contact.js"></script>
 </body>
 </html>

@@ -262,13 +262,29 @@ function init() {
 
 window.addEventListener('load', init);
 
-// Role: Resume playback for videos when the document becomes visible again (useful after switching tabs)
+// Handle visibility change to keep videos in sync
 document.addEventListener('visibilitychange', () => {
-  if (!document.hidden) {
-    videoElements.forEach((video, index) => {
-      if (video.paused) {
-        video.play().catch(err => console.log('Resume failed:', err));
+  if (!document.hidden && allVideosReady) {
+    syncVideos();
+    videos.forEach(v => {
+      if (v.paused) {
+        v.play().catch(err => console.log('Play prevented:', err));
       }
     });
+  }
+});
+
+// Update "Continue" button text when language changes
+window.addEventListener('langChanged', (e) => {
+  const lang = e.detail.lang;
+  const translations = window.translations;
+  
+  if (translations && translations[lang]) {
+    const continueBtn = document.getElementById('continueBtn');
+    if (continueBtn && translations[lang]['cash.continue']) {
+      continueBtn.textContent = translations[lang]['cash.continue'];
+    }
+  }
+});
   }
 });

@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="css/card-details.css">
+  <link rel="stylesheet" href="css/translations.css" />
   <link rel="icon" type="image/x-icon" href="res/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -22,12 +23,12 @@
         <img src="res/logo.png" alt="Logo"> 
         3DXENON
       </div>
-      <a href="index.html#case" class="back-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M19 12H5M12 19l-7-7 7-7"/>
-        </svg>
-        Back to Gallery
-      </a>
+       <a href="index.html#case" class="back-btn">
+         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+           <path d="M19 12H5M12 19l-7-7 7-7"/>
+         </svg>
+         <span data-i18n="details.back">Back to Gallery</span>
+       </a>
     </div>
   </header>
 
@@ -50,37 +51,31 @@
       <!-- Main Content -->
       <div class="project-main">
         
-        <!-- Overview -->
-        <div class="content-block">
-          <h2 class="block-title">Project Overview</h2>
-          <p class="block-text" id="detailOverview"></p>
-        </div>
+         <div class="content-block">
+           <h2 class="block-title" data-i18n="details.overview">Project Overview</h2>
+           <p class="block-text" id="detailOverview"></p>
+         </div>
 
-        <!-- Challenge -->
-        <div class="content-block">
-          <h2 class="block-title">The Challenge</h2>
-          <p class="block-text" id="detailChallenge"></p>
-        </div>
+         <div class="content-block">
+           <h2 class="block-title" data-i18n="details.challenge">The Challenge</h2>
+           <p class="block-text" id="detailChallenge"></p>
+         </div>
 
-        <!-- Solution -->
-        <div class="content-block">
-          <h2 class="block-title">Our Solution</h2>
-          <p class="block-text" id="detailSolution"></p>
-        </div>
+         <div class="content-block">
+           <h2 class="block-title" data-i18n="details.solution">Our Solution</h2>
+           <p class="block-text" id="detailSolution"></p>
+         </div>
 
-        <!-- Results -->
-        <div class="content-block">
-          <h2 class="block-title">Results & Impact</h2>
-          <p class="block-text" id="detailResults"></p>
-        </div>
+         <div class="content-block">
+           <h2 class="block-title" data-i18n="details.results">Results & Impact</h2>
+           <p class="block-text" id="detailResults"></p>
+         </div>
 
-        <!-- Image Gallery -->
-        <div class="content-block">
-          <h2 class="block-title">Project Gallery</h2>
-          <div class="detail-gallery" id="detailGallery">
-            <!-- Images and video will be added dynamically -->
-          </div>
-        </div>
+         <div class="content-block">
+           <h2 class="block-title" data-i18n="details.gallery">Project Gallery</h2>
+           <div class="detail-gallery" id="detailGallery">
+           </div>
+         </div>
 
       </div>
 
@@ -88,24 +83,23 @@
       <aside class="project-sidebar">
         
         <!-- Services -->
-        <div class="sidebar-card">
-          <h3 class="sidebar-title">Services Provided</h3>
-          <ul class="services-list" id="detailServices">
-            <!-- Services will be added dynamically -->
-          </ul>
-        </div>
+         <div class="sidebar-card">
+           <h3 class="sidebar-title" data-i18n="details.services">Services Provided</h3>
+           <ul class="services-list" id="detailServices">
+           </ul>
+         </div>
 
         <!-- CTA -->
-        <div class="sidebar-card sidebar-cta">
-          <h3 class="sidebar-title">Interested in Similar Project?</h3>
-          <p class="sidebar-text">Let's discuss how we can bring your vision to life.</p>
-          <a href="contact.html" class="cta-btn">
-            Get in Touch
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
+         <div class="sidebar-card sidebar-cta">
+           <h3 class="sidebar-title" data-i18n="details.cta.title">Interested in Similar Project?</h3>
+           <p class="sidebar-text" data-i18n="details.cta.text">Let's discuss how we can bring your vision to life.</p>
+           <a href="contact.html" class="cta-btn" data-i18n="details.cta.btn">
+             Get in Touch
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+               <path d="M5 12h14M12 5l7 7-7 7"/>
+             </svg>
+           </a>
+         </div>
 
       </aside>
 
@@ -113,19 +107,18 @@
   </section>
 
   <!-- Related Projects -->
-  <section class="related-projects">
-    <div class="related-container">
-      <h2 class="related-title">Other Case Studies</h2>
-      <div class="related-grid" id="relatedProjects">
-        <!-- Related projects will be added dynamically -->
-      </div>
-    </div>
-  </section>
+   <section class="related-projects">
+     <div class="related-container">
+       <h2 class="related-title" data-i18n="details.related">Other Case Studies</h2>
+       <div class="related-grid" id="relatedProjects">
+       </div>
+     </div>
+   </section>
 
 <!-- Footer -->
-<footer class="card-footer">
-  <div class="footer-content">
-    <p>© 2025 3DXENON — all rights reserved</p>
+ <footer class="card-footer">
+   <div class="footer-content">
+     <p data-i18n="footer.copyright">© 2026 3DXENON — all rights reserved</p>
 
     <div class="footer-social">
       
@@ -149,6 +142,7 @@
 </footer>
 
 
+  <script src="script/translations.js" defer></script>
   <script src="script/card-details.js"></script>
 </body>
 </html>

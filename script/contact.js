@@ -1,7 +1,25 @@
-// Contact Page JavaScript
+// Contact Page JavaScript - with translation support
 
 // Initialize animations on page load
 function initContactAnimations() {
+  const animatedElements = document.querySelectorAll('[data-contact-animate]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.2,
+    rootMargin: '0px'
+  });
+  
+  animatedElements.forEach(element => {
+    observer.observe(element);
+  });
+}
   const animatedElements = document.querySelectorAll('[data-contact-animate]');
   
   const observer = new IntersectionObserver((entries) => {
@@ -33,7 +51,6 @@ function initContactForm() {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // Get form data
     const formData = {
       name: document.getElementById('name').value,
       email: document.getElementById('email').value,
@@ -41,32 +58,35 @@ function initContactForm() {
       message: document.getElementById('message').value
     };
     
-    // Disable submit button
     const submitBtn = form.querySelector('.submit-btn');
     const originalText = submitBtn.innerHTML;
     submitBtn.disabled = true;
-    submitBtn.innerHTML = 'Sending...';
     
-    // Simulate sending (replace with your actual API call)
     try {
-      // Example: await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) });
+      const translations = window.translations;
+      const lang = localStorage.getItem('lang') || 'en';
       
-      // Simulate API delay
+      if (translations && translations[lang] && translations[lang]['contact.sending']) {
+        submitBtn.innerHTML = translations[lang]['contact.sending'];
+      }
+      
       await new Promise(resolve => setTimeout(resolve, 1500));
       
-      // Show success message
       form.style.display = 'none';
       successMessage.classList.add('show');
       
-      // Log form data (for testing)
       console.log('Form submitted:', formData);
-      
-      // Optional: Send email via mailto (fallback)
-      // window.location.href = `mailto:contact@3dxenon.com?subject=Contact from ${formData.name}&body=${formData.message}`;
       
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('There was an error sending your message. Please try again or contact us directly via email.');
+      
+      const translations = window.translations;
+      const lang = localStorage.getItem('lang') || 'en';
+      const errorMessage = (translations && translations[lang] && translations[lang]['contact.error']) 
+        ? translations[lang]['contact.error'] 
+        : 'There was an error sending your message. Please try again or contact us directly via email.';
+      
+      alert(errorMessage);
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalText;
     }
@@ -133,11 +153,36 @@ document.addEventListener('DOMContentLoaded', () => {
   initFormValidation();
   initSmoothScroll();
   
-  // Scroll to top on page load
   window.scrollTo(0, 0);
 });
 
 // Optional: Add loading state
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
+});
+
+// Update form placeholders when language changes
+window.addEventListener('langChanged', (e) => {
+  const lang = e.detail.lang;
+  const translations = window.translations;
+  
+  if (translations && translations[lang]) {
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const messageInput = document.getElementById('message');
+    
+    if (nameInput && translations[lang]['form.name.placeholder']) {
+      nameInput.placeholder = translations[lang]['form.name.placeholder'];
+    }
+    if (emailInput && translations[lang]['form.email.placeholder']) {
+      emailInput.placeholder = translations[lang]['form.email.placeholder'];
+    }
+    if (phoneInput && translations[lang]['form.phone.placeholder']) {
+      phoneInput.placeholder = translations[lang]['form.phone.placeholder'];
+    }
+    if (messageInput && translations[lang]['form.message.placeholder']) {
+      messageInput.placeholder = translations[lang]['form.message.placeholder'];
+    }
+  }
 });

@@ -1,6 +1,3 @@
-// card-details.js - Complete Project Details System (updated to support multiple videos)
-// Videos containers now get an inline height (300px) so all videos appear like images.
-
 const projectsData = {
   'project-1': {
     id: 'project-1',
@@ -435,6 +432,26 @@ function closeLightbox() {
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', loadProjectDetails);
+
+// Update translations on language change
+window.addEventListener('langChanged', (e) => {
+  const lang = e.detail.lang;
+  const translations = window.translations;
+  
+  if (translations && translations[lang]) {
+    const backLink = document.querySelector('.back-btn');
+    const relatedTitle = document.querySelector('.related-title');
+    
+    if (backLink && translations[lang]['details.back']) {
+      const span = backLink.querySelector('span');
+      if (span) span.textContent = translations[lang]['details.back'];
+    }
+    
+    if (relatedTitle && translations[lang]['details.related']) {
+      relatedTitle.textContent = translations[lang]['details.related'];
+    }
+  }
+});
 
 // Smooth scroll to top
 window.scrollTo(0, 0);

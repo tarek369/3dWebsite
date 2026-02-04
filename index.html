@@ -14,12 +14,14 @@
 
   <!-- Role: Link to external stylesheet that contains all visual styles for the page. -->
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/translations.css" />
   
   <link rel="icon" type="image/x-icon" href="res/logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 
   <!-- Role: Link to external JavaScript file; 'defer' ensures it runs after HTML parsing. This file likely contains UI interactions, animations, and event handlers. -->
+  <script src="script/translations.js" defer></script>
   <script src="script/script.js" defer></script>
 
 </head>
@@ -34,12 +36,12 @@
     </div>
     <!-- Role: Primary navigation links to key sections and contact page. -->
     <nav>
-      <a href="#about">ABOUT</a>
-      <a href="#services">SERVICES</a>
-      <a href="#case">CASE STUDY</a>
+      <a href="#about" data-i18n="nav.about">ABOUT</a>
+      <a href="#services" data-i18n="nav.services">SERVICES</a>
+      <a href="#case" data-i18n="nav.case">CASE STUDY</a>
       <!-- <a href="news.html">NEWS</a> -->
       <!-- <a href="#team">TEAM</a> -->
-      <a href="contact.html">CONTACT</a>
+      <a href="contact.html" data-i18n="nav.contact">CONTACT</a>
     </nav>
   </header>
   
@@ -51,13 +53,13 @@
     <!-- Role: Initial hero content: animated title words and a scroll instruction. Used for first impression and CTA to scroll. -->
     <div class="hero-initial" id="heroInitial">
       <h1 class="hero-title">
-        <span class="word">From</span>
-        <span class="word">Idea</span>
-        <span class="word">to</span>
-        <span class="word">Immersive</span>
-        <span class="word">Reality</span>
+        <span class="word" data-i18n="hero.title.1">From</span>
+        <span class="word" data-i18n="hero.title.2">Idea</span>
+        <span class="word" data-i18n="hero.title.3">to</span>
+        <span class="word" data-i18n="hero.title.4">Immersive</span>
+        <span class="word" data-i18n="hero.title.5">Reality</span>
       </h1>
-      <p class="scroll-instruction" id="scrollInstruction">SCROLL DOWN TO CONTINUE</p>
+      <p class="scroll-instruction" id="scrollInstruction" data-i18n="hero.scroll">SCROLL DOWN TO CONTINUE</p>
     </div>
 
     <!-- Role: Container for the live/embed video feed. Embeds another HTML (cash.html) via an iframe to display stacked videos or dynamic content. Keeps the main page lightweight while loading video content separately. -->
@@ -79,13 +81,11 @@
   <!-- Role: Services / Hero supporting title section. Provides an introductory headline and descriptive paragraph explaining company offering and digital twin concept. -->
 <section class="services-title" >
   <div class="services-title-container">
-    <!-- Main title -->
-    <h2 class="services-main-title" data-services-animate>
+    <h2 class="services-main-title" data-services-animate data-i18n="services.welcome">
       Welcome to the future of design and visualization
     </h2>
     
-    <!-- Description paragraph explaining the value proposition and use-cases. -->
-    <p class="services-description" data-services-animate>
+    <p class="services-description" data-services-animate data-i18n="services.description">
       A Digital Twin is a dynamic, high-fidelity virtual replica of your physical asset. 
       It allows you to test, simulate, and understand real-world scenarios—from seasonal weather 
       changes to operational efficiency—before any construction begins. Explore the interactive 
@@ -114,8 +114,8 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
   <!-- Role: About section describing company background, team, capabilities and stats. Useful for trust signals and social proof. -->
   <section class="services-section" id="services">
     <div class="services-container">
-      <h2 class="about-title">Our Services</h2>
-      <p class="about-subtitle">We are a team of creative professionals specializing in analysis and advanced visual content production</p>
+      <h2 class="about-title" data-i18n="services.title">Our Services</h2>
+      <p class="about-subtitle" data-i18n="services.subtitle">We are a team of creative professionals specializing in analysis and advanced visual content production</p>
 
 
       <!-- Role: Grid of service offerings. Each card highlights a core service with icon, title and brief description. -->
@@ -161,10 +161,9 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
 
   <!-- Role: Case-study / portfolio section showcasing selected projects. Each card links to a detailed case study page using query parameters. -->
 <!-- case-study Section - Updated with Links -->
-<section class="case-study" id="case">
+  <section class="case-study" id="case">
   <div class="case-study-container">
-    <!-- Section Header -->
-    <h2 class="case-study-title">Case Study</h2>
+    <h2 class="case-study-title" data-i18n="case.title">Case Study</h2>
     
     <!-- Case-Study Grid -->
     <div class="work-grid">
@@ -375,9 +374,8 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
 <!-- Role: Clients section to showcase partner logos and provide social proof. Uses a continuous slider track for seamless logo animation. -->
 <section class="clients-section">
   <div class="clients-container">
-    <!-- Section Title -->
-    <h2 class="clients-title" data-clients-animate>Our Clients</h2>
-    <p class="clients-subtitle" data-clients-animate>Trusted by leading brands worldwide</p>
+    <h2 class="clients-title" data-clients-animate data-i18n="clients.title">Our Clients</h2>
+    <p class="clients-subtitle" data-clients-animate data-i18n="clients.subtitle">Trusted by leading brands worldwide</p>
     
     <!-- Role: Logos slider - a horizontally scrolling track containing client logos. Duplicated logos create a seamless infinite loop effect. -->
     <div class="logos-slider">
@@ -498,31 +496,28 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
 
 <section class="about-section" id="about">
     <div class="about-container">
-      <h2 class="about-title">About Our Company</h2>
-      <p class="about-subtitle">3D Xenon is an Estonia-based creative technology studio uniting talent from Europe and the Middle East</p>
+      <h2 class="about-title" data-i18n="about.title">About Our Company</h2>
+      <p class="about-subtitle" data-i18n="about.subtitle">3D Xenon is an Estonia-based creative technology studio uniting talent from Europe and the Middle East</p>
       <div class="about-grid">
-        <!-- Role: Main about text paragraphs. Explain services, experience and team composition. -->
         <div class="about-text">
-          <p>Our international team of professionals brings expertise in 3D visualization, digital-twin development, software engineering, and product innovation, with hands-on experience across the EU and the Middle East.</p>
-          <p>We build real-time city simulations, immersive VR environments, and data-driven digital twins that connect physical spaces with intelligent insights</p>
-          <p>By integrating AI-enhanced analytics, IoT sensor data, and solar or environmental simulations, our solutions empower planners, architects, and decision-makers to visualize performance, sustainability, and efficiency before projects are built.</p>
-          <p>Grounded in Estonia’s digital innovation ecosystem, 3D Xenon turns real-world environments into interactive experiences that inspire smarter, more sustainable cities. </p>
+          <p data-i18n="about.p1">Our international team of professionals brings expertise in 3D visualization, digital-twin development, software engineering, and product innovation, with hands-on experience across the EU and the Middle East.</p>
+          <p data-i18n="about.p2">We build real-time city simulations, immersive VR environments, and data-driven digital twins that connect physical spaces with intelligent insights</p>
+          <p data-i18n="about.p3">By integrating AI-enhanced analytics, IoT sensor data, and solar or environmental simulations, our solutions empower planners, architects, and decision-makers to visualize performance, sustainability, and efficiency before projects are built.</p>
+          <p data-i18n="about.p4">Grounded in Estonia's digital innovation ecosystem, 3D Xenon turns real-world environments into interactive experiences that inspire smarter, more sustainable cities. </p>
         </div>
         
-        <!-- Role: Short statistics cards used as visual proof points (projects, clients, experience, awards). -->
         <div class="about-stats">
-          <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label">Completed Projects</div></div>
-          <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label">Happy Clients</div></div>
-          <div class="stat-card"><div class="stat-number">8+</div><div class="stat-label">Years Experience</div></div>
-          <div class="stat-card"><div class="stat-number">15+</div><div class="stat-label">Awards Won</div></div>
+          <div class="stat-card"><div class="stat-number">500+</div><div class="stat-label" data-i18n="stat.projects">Completed Projects</div></div>
+          <div class="stat-card"><div class="stat-number">50+</div><div class="stat-label" data-i18n="stat.clients">Happy Clients</div></div>
+          <div class="stat-card"><div class="stat-number">8+</div><div class="stat-label" data-i18n="stat.experience">Years Experience</div></div>
+          <div class="stat-card"><div class="stat-number">15+</div><div class="stat-label" data-i18n="stat.awards">Awards Won</div></div>
         </div>
       </div>
   </section>
   <!-- Role: Footer with copyright & dynamic year span. The #year element is likely populated by script/script.js at runtime. -->
-<!-- Footer -->
-<footer class="index-footer">
-  <div class="footer-content">
-    <p>© 2025 3DXENON — all rights reserved</p>
+ <footer class="index-footer">
+   <div class="footer-content">
+     <p data-i18n="footer.copyright">© 2026 3DXENON — all rights reserved</p>
 
     <div class="footer-social">
       
