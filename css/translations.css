@@ -3,7 +3,7 @@
 .lang-toggle {
   position: absolute;
   top: 14px;
-  right: 20px;
+  right: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,7 +35,7 @@
     width: 40px;
     height: 40px;
     margin-left: 0;
-    right: 16px;
+    right: 28px;
     top: 12px;
     font-size: 1.2rem;
   }
@@ -46,7 +46,7 @@
     width: 36px;
     height: 36px;
     margin-left: 0;
-    right: 12px;
+    right: 18px;
     top: 10px;
     font-size: 1rem;
   }
