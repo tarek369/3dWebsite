@@ -34,6 +34,31 @@ const translations = {
     'service.6.title': 'Virtual Reality',
     'service.6.desc': 'Development of interactive virtual and augmented reality experiences for training and marketing.',
 
+    // Case Study Project Cards
+    'project.1.category': 'Work Flow: Open-Plan Office Visualization',
+    'project.1.title': 'Interior Design-3D Visualization',
+    'project.1.desc': 'A daylight-driven office render showcasing balanced artificial and natural light distribution. Visualization developed from basic 2D plans to test how ceiling fixtures and window systems impact working environments.',
+
+    'project.2.category': 'LUXMOD: A Contemporary Villa Study',
+    'project.2.title': 'Architectural Design & 3D Visualization',
+    'project.2.desc': 'A calm residential corner with a nod to Tudor architecture. This 3D visualization emphasizes light, composition, and environment to bring architectural intent to life.',
+
+    'project.3.category': 'Urban-Architecture Design and Visualizing',
+    'project.3.title': 'Verde Haven: A Countryside Escape.',
+    'project.3.desc': 'Complete Villa visualization project in a countryside, including modeling, texturing, lighting, and rendering—all executed in multiple urban & 3D applications. Designed to reflect comfort, sophistication, and balance.',
+
+    'project.4.category': 'Smart City Solutions',
+    'project.4.title': 'DigitalTwin-Urban-SmartCity-Animation-GIS',
+    'project.4.desc': 'Urban visualization turned into a game-style navigation experience. The project utilized various modeling and optimization tools before being deployed in Unreal Engine as an interactive walk/fly-through, for Digitaltwinning purposes.',
+
+    'project.5.category': 'Realtime Render, Interactive VR, 3D Visualization',
+    'project.5.title': 'Immersive Motion: Real-Time VR & Simulations',
+    'project.5.desc': 'This real-time city environment blends technical accuracy with visual clarity. Optimized assets and performance settings were tuned for an Unreal Engine navigation tool that feels like an open-world game.',
+
+    'project.6.category': 'Tranquil Layers: A Contemporary Living-room Escape',
+    'project.6.title': '3D Visualization',
+    'project.6.desc': 'Subtle textures, layered lighting, and a calming palette come together in this Ultra Realistic 3D Living-room visualization.',
+
     // Index Page - Case Study
     'case.title': 'Case Study',
     'case.link': 'Case Study',
@@ -132,6 +157,31 @@ const translations = {
     'service.5.desc': 'AI-toega analüüs, sensorite integratsioon ja tsentraliseeritud haldus nutilinnade IoTi süsteemide jaoks.',
     'service.6.title': 'Virtuaalreaalsus',
     'service.6.desc': 'Interaktiivsete virtuaal- ja lisatud reaalsuse kogemuste arendamine koolituse ja turunduse jaoks.',
+    
+    // Case Study Project Cards - Estonian
+    'project.1.category': 'Töövoog: Avatud kontori visualiseerimine',
+    'project.1.title': 'Sisekujundus-3D visualiseerimine',
+    'project.1.desc': 'Päeval põhinev kontori render, mis näitab tasakaalusest ja looduslikust valguse kogemust. Visualiseerimine arendatud põhine 2D plaanidest, et testida, kuidas lae ja akna süsteemid mõjutavad töökeskkonda.',
+
+    'project.2.category': 'LUXMOD: Kaasaegne Villa uuring',
+    'project.2.title': 'Arhitektuuriline disain ja 3D visualiseerimine',
+    'project.2.desc': 'Rahuline elamispind Tudori arhitektuurist mõjutega. See 3D visualiseerimine rõhutab valgust, kompositsiooni ja keskkonda, et tuua arhitektuurilist taasa ellu.',
+
+    'project.3.category': 'Urbane-arhitektuuriline disain ja visualiseerimine',
+    'project.3.title': 'Verde Haven: Maapihi põgenemis.',
+    'project.3.desc': 'Täielik villa visualiseerimine projekt maapihis, shul modelleerimine, tekstuurimine, valgustamine ja renderdamine—kõik on teostatud mitmes linnas- ja 3D rakendustes. Kujundatud rõhuvestama mugavust, sophistikeerimust ja tasakaalust.',
+
+    'project.4.category': 'Nutlinna lahendused',
+    'project.4.title': 'Digitaalne kaksik-urbaalne-nutilinn-linnanimatsioon-GIS',
+    'project.4.desc': 'Urbaanne visualiseerimine muudeti mängusarnase navigatsioonikogemuseks. Projekt kasutas mitmeid modelleerimis- ja optimeerimistöööri enne Unreal Engine\'isse deploerimist interaktiivseks käigu- ja lennukogemuseks digitaalse kaksikumiseks.',
+
+    'project.5.category': 'Reaalajas renderdamine, interaktiivne VR, 3D visualiseerimine',
+    'project.5.title': 'Kogemuline liikumine: Reaalajas VR ja simulatsioonid',
+    'project.5.desc': 'See reaalajas linnakeskkond sobib tehnilist täpsuse visuaalse selgusega. Optimeeritud varad ja jõudlusseadised seatiidid Unreal Engine navigatsioonivahendiks, mis tundub nagu avatud maailmamäng.',
+
+    'project.6.category': 'Rahulikud kihid: Kaasaegne elutoa põgenemis',
+    'project.6.title': '3D visualiseerimine',
+    'project.6.desc': 'Peened tekstuurid, kihilistatud valgus ja rahulik värvipalett koosnevad selles Ultra Realistlikus 3D elutoa visualiseerimises.',
 
     // Index Page - Case Study
     'case.title': 'Juhum',

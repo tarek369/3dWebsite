@@ -290,6 +290,8 @@ function getProjectId() {
 function loadProjectDetails() {
   const projectId = getProjectId();
   const project = projectsData[projectId];
+  const lang = localStorage.getItem('lang') || 'en';
+  const translations = window.translations;
   
   if (!project) {
     window.location.href = 'index.html';
@@ -301,8 +303,23 @@ function loadProjectDetails() {
   
   // Hero section
   document.getElementById('heroImage').src = project.image;
-  document.getElementById('detailCategory').textContent = project.category;
-  document.getElementById('detailTitle').textContent = project.title;
+  
+  const categoryEl = document.getElementById('detailCategory');
+  const titleEl = document.getElementById('detailTitle');
+  
+  if (translations && translations[lang]) {
+    if (categoryEl && translations[lang][project.category + '.et']) {
+      categoryEl.textContent = translations[lang][project.category + '.et'];
+    } else {
+      categoryEl.textContent = project.category;
+    }
+    
+    if (titleEl && translations[lang][project.id + '.title']) {
+      titleEl.textContent = translations[lang][project.id + '.title'];
+    } else {
+      titleEl.textContent = project.title;
+    }
+  }
   
   // Main content
   document.getElementById('detailOverview').textContent = project.overview;
@@ -373,24 +390,35 @@ function loadProjectDetails() {
 // Load related projects
 function loadRelatedProjects(currentProjectId) {
   const relatedContainer = document.getElementById('relatedProjects');
+  const lang = localStorage.getItem('lang') || 'en';
+  const translations = window.translations;
   const allProjects = Object.values(projectsData);
   const relatedProjects = allProjects.filter(p => p.id !== currentProjectId).slice(0, 5);
   
-  relatedContainer.innerHTML = relatedProjects.map(project => `
+  relatedContainer.innerHTML = relatedProjects.map(project => {
+    const categoryKey = project.id + '.category';
+    const titleKey = project.id + '.title';
+    const category = (translations && translations[lang] && translations[lang][categoryKey]) ? translations[lang][categoryKey] : project.category;
+    const title = (translations && translations[lang] && translations[lang][titleKey]) ? translations[lang][titleKey] : project.title;
+    
+    return `
     <a href="card-details.html?id=${project.id}" class="related-card">
       <div class="related-card-image">
-        <img src="${project.image}" alt="${project.title}">
+        <img src="${project.image}" alt="${title}">
       </div>
       <div class="related-card-content">
-        <div class="related-card-category">${project.category}</div>
-        <h3 class="related-card-title">${project.title}</h3>
+        <div class="related-card-category">${category}</div>
+        <h3 class="related-card-title">${title}</h3>
       </div>
     </a>
-  `).join('');
+  `}).join('');
 }
 
 // Create Lightbox Element
 function createLightbox() {
+  const lang = localStorage.getItem('lang') || 'en';
+  const translations = window.translations;
+  
   const lightboxHTML = `
     <div id="imageLightbox" class="lightbox">
       <span class="lightbox-close">&times;</span>

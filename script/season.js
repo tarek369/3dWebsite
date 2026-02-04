@@ -123,8 +123,25 @@ document.addEventListener('keydown', (e) => {
 
 // Initialize on page load
 window.addEventListener('load', () => {
-    initializeVideos();
-    switchSeason(0); // Start with spring
+  initializeVideos();
+  switchSeason(0); // Start with spring
+});
+
+// Update season labels when language changes
+window.addEventListener('langChanged', (e) => {
+  const lang = e.detail.lang;
+  const translations = window.translations;
+  
+  if (translations && translations[lang]) {
+    const seasonIcons = document.querySelectorAll('.season-icon span');
+    const seasons = ['season.sunny', 'season.foggy', 'season.rainy', 'season.snowy'];
+    
+    seasonIcons.forEach((span, index) => {
+      if (index < 4 && translations[lang][seasons[index]]) {
+        span.textContent = translations[lang][seasons[index]];
+      }
+    });
+  }
 });
 
 // Handle visibility change to keep videos in sync
