@@ -7,20 +7,17 @@ const projectsData = {
     overview: `
     A daylight-driven office render showcasing balanced artificial and natural light distribution. Visualization developed from basic 2D plans to test how ceiling fixtures and window systems impact working environments.`,
     challenge: `
-    The Challenges
-    •
-    Translating 2D architectural plans into a fully realized 3D environment.
-    •
-    Achieving balanced lighting conditions that replicate real-world daylight behavior.
-    •
-    Ensuring visual comfort and realistic material reflections within the office space.`,
+    <ul class="challenge-list">
+      <li>Translating 2D architectural plans into a fully realized 3D environment.</li>
+      <li>Achieving balanced lighting conditions that replicate real-world daylight behavior.</li>
+      <li>Ensuring visual comfort and realistic material reflections within the office space.</li>
+    </ul>`,
     solution: `
-    •
-    Modeled complete interior layout from 2D CAD references with precision.
-    •
-    Simulated daylight and artificial light systems to analyze luminance distribution.
-    •
-    Applied realistic textures and materials to enhance the visual fidelity of surfaces and furniture.`,
+    <ul class="solution-list">
+      <li>Modeled complete interior layout from 2D CAD references with precision.</li>
+      <li>Simulated daylight and artificial light systems to analyze luminance distribution.</li>
+      <li>Applied realistic textures and materials to enhance the visual fidelity of surfaces and furniture.</li>
+    </ul>`,
     results: `
     Resolution & Impact
     The final renders delivered a professional and accurate visualization of a modern office atmosphere, enabling the client to make informed decisions on lighting and layout design.
@@ -51,20 +48,17 @@ const projectsData = {
     overview: `
     A calm residential corner with a nod to Tudor architecture. This 3D visualization emphasizes light, composition, and environment to bring architectural intent to life.`,
     challenge: `
-    The Challenges
-    •
-    Achieving realistic lighting and material reflection to highlight Tudor architectural elements.
-    •
-    Balancing artistic composition with architectural accuracy.
-    •
-    Creating a calm yet dynamic environment that conveys a sense of comfort and luxury.`,
+    <ul class="challenge-list">
+      <li>Achieving realistic lighting and material reflection to highlight Tudor architectural elements.</li>
+      <li>Balancing artistic composition with architectural accuracy.</li>
+      <li>Creating a calm yet dynamic environment that conveys a sense of comfort and luxury.</li>
+    </ul>`,
     solution: `
-    •
-    Developed detailed 3D models inspired by Tudor-style design principles.
-    •
-    Used advanced rendering techniques to emphasize natural lighting and realistic textures.
-    •
-    Optimized environment setup for depth, balance, and immersive visual storytelling.`,
+    <ul class="solution-list">
+      <li>Developed detailed 3D models inspired by Tudor-style design principles.</li>
+      <li>Used advanced rendering techniques to emphasize natural lighting and realistic textures.</li>
+      <li>Optimized environment setup for depth, balance, and immersive visual storytelling.</li>
+    </ul>`,
     results: `
     Resolution & Impact
     The project successfully delivered a highly realistic visualization that communicates both architectural precision and aesthetic elegance.
@@ -95,24 +89,19 @@ const projectsData = {
     overview: `
     Complete Villa visualization project in a countryside, including modeling, texturing, lighting, and rendering—all executed in multiple urban & 3D applications. Designed to reflect comfort, sophistication, and balance.`,
     challenge: `
-    The Challenges
-    •
-    Coordinating assets and workflows across multiple 3D and urban design applications.
-    •
-    Modeling and integrating realistic landscape and vegetation around the villa.
-    •
-    Creating high-quality textures and materials that read well at close and distance views.
-    •
-    Balancing render quality with reasonable render times for large exterior scenes.`,
+    <ul class="challenge-list">
+      <li>Coordinating assets and workflows across multiple 3D and urban design applications.</li>
+      <li>Modeling and integrating realistic landscape and vegetation around the villa.</li>
+      <li>Creating high-quality textures and materials that read well at close and distance views.</li>
+      <li>Balancing render quality with reasonable render times for large exterior scenes.</li>
+    </ul>`,
     solution: `
-    •
-    Implemented a multi-application pipeline for modeling, texturing, and scene assembly.
-    •
-    Used instancing and optimized vegetation workflows to populate the landscape efficiently.
-    •
-    Applied layered PBR materials and detailed texture work for realism.
-    •
-    Tuned lighting rigs and render settings to achieve photoreal exterior illumination and manageable render times.`,
+    <ul class="solution-list">
+      <li>Implemented a multi-application pipeline for modeling, texturing, and scene assembly.</li>
+      <li>Used instancing and optimized vegetation workflows to populate the landscape efficiently.</li>
+      <li>Applied layered PBR materials and detailed texture work for realism.</li>
+      <li>Tuned lighting rigs and render settings to achieve photoreal exterior illumination and manageable render times.</li>
+    </ul>`,
     results: `
     Resolution & Impact
     The project delivered a cohesive and highly realistic countryside villa visualization that communicates comfort and sophistication, aiding client decision-making and marketing materials.
@@ -153,24 +142,19 @@ const projectsData = {
 
     This project proves how Digital Twins can support urban planning, mobility studies, climate action, and citizen engagement.`,
     challenge: `
-    The Challenges
-    •
-    Integrating large-scale GIS, BIM, and photogrammetry datasets into a single optimized Unreal Engine environment.
-    •
-    Creating AI-driven behaviors for pedestrians and vehicles with realistic logic.
-    •
-    Balancing visual fidelity and performance for smooth real-time navigation.
-    •
-    Ensuring accuracy of geospatial context while maintaining interactivity.`,
+    <ul class="challenge-list">
+      <li>Integrating large-scale GIS, BIM, and photogrammetry datasets into a single optimized Unreal Engine environment.</li>
+      <li>Creating AI-driven behaviors for pedestrians and vehicles with realistic logic.</li>
+      <li>Balancing visual fidelity and performance for smooth real-time navigation.</li>
+      <li>Ensuring accuracy of geospatial context while maintaining interactivity.</li>
+    </ul>`,
     solution: `
-    •
-    Streamlined GIS and BIM data pipelines and optimized assets for real-time rendering.
-    •
-    Developed AI logic for traffic and pedestrian systems to simulate realistic city movement.
-    •
-    Implemented LOD systems and texture streaming to maintain performance.
-    •
-    Added interactive layers for smart city features such as mobility, energy, and climate visualization.`,
+    <ul class="solution-list">
+      <li>Streamlined GIS and BIM data pipelines and optimized assets for real-time rendering.</li>
+      <li>Developed AI logic for traffic and pedestrian systems to simulate realistic city movement.</li>
+      <li>Implemented LOD systems and texture streaming to maintain performance.</li>
+      <li>Added interactive layers for smart city features such as mobility, energy, and climate visualization.</li>
+    </ul>`,
     results: `
     Resolution & Impact
     The Smart City Simulation demonstrated how immersive, data-driven digital twins can revolutionize urban planning and citizen engagement.
@@ -239,22 +223,18 @@ const projectsData = {
     overview: `
     Subtle textures, layered lighting, and a calming palette come together in this Ultra Realistic 3D Living-room visualization.`,
     challenge: `
-    The Challenges
-    •
-    Achieving harmony between textures, color palette, and light composition.
-    •
-    Reproducing realistic materials and reflections within a compact interior space.
-    •
-    Balancing soft ambient light with focused highlights to maintain depth and realism.`,
+    <ul class="challenge-list">
+      <li>Achieving harmony between textures, color palette, and light composition.</li>
+      <li>Reproducing realistic materials and reflections within a compact interior space.</li>
+      <li>Balancing soft ambient light with focused highlights to maintain depth and realism.</li>
+    </ul>`,
     solution: `
-    •
-    Built a detailed 3D model emphasizing composition and spatial flow.
-    •
-    Used layered lighting setups to achieve both natural and artificial illumination.
-    •
-    Applied PBR-based materials and high-quality shaders for fabric, wood, and metal surfaces.
-    •
-    Final color grading and tone mapping completed in post-production for warmth and depth.`,
+    <ul class="solution-list">
+      <li>Built a detailed 3D model emphasizing composition and spatial flow.</li>
+      <li>Used layered lighting setups to achieve both natural and artificial illumination.</li>
+      <li>Applied PBR-based materials and high-quality shaders for fabric, wood, and metal surfaces.</li>
+      <li>Final color grading and tone mapping completed in post-production for warmth and depth.</li>
+    </ul>`,
     results: `
     Resolution & Impact
     The result is a serene, photorealistic interior visualization that highlights material quality and ambiance, helping clients envision their modern living spaces with clarity.
@@ -323,8 +303,8 @@ function loadProjectDetails() {
   
   // Main content
   document.getElementById('detailOverview').textContent = project.overview;
-  document.getElementById('detailChallenge').textContent = project.challenge;
-  document.getElementById('detailSolution').textContent = project.solution;
+  document.getElementById('detailChallenge').innerHTML = project.challenge;
+  document.getElementById('detailSolution').innerHTML = project.solution;
   document.getElementById('detailResults').textContent = project.results;
   
   // Services

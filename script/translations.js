@@ -1,5 +1,6 @@
 // Role: Translation data for all pages - English and Estonian
-const translations = {
+if (!window.translations) {
+  window.translations = {
   'en': {
     // Navigation & Common
     'nav.about': 'ABOUT',
@@ -246,11 +247,15 @@ const translations = {
     'form.email.placeholder': 'teie.email@naitide.ee',
     'form.phone.placeholder': '+372 (555) 000-0000',
     'form.message.placeholder': 'Rääkige meile oma projektist...'
-  }
-};
+    }
+  };
+}
 
-// Role: Current language state
-let currentLang = localStorage.getItem('lang') || 'en';
+
+// Wrap runtime logic in an IIFE and use the shared `window.translations`
+(function () {
+  // Role: Current language state
+  let currentLang = localStorage.getItem('lang') || 'en';
 
 // Role: Switch language and update all elements with data-i18n attribute
 function setLanguage(lang) {
@@ -343,3 +348,5 @@ if (document.readyState === 'loading') {
 } else {
   initLanguage();
 }
+
+})();
