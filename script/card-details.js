@@ -287,29 +287,62 @@ function loadProjectDetails() {
   const categoryEl = document.getElementById('detailCategory');
   const titleEl = document.getElementById('detailTitle');
   
+  // Use a normalized key for project translations: 'project-6' -> 'project.6'
+  const projKey = project.id.replace('-', '.');
+
   if (translations && translations[lang]) {
-    if (categoryEl && translations[lang][project.category + '.et']) {
-      categoryEl.textContent = translations[lang][project.category + '.et'];
-    } else {
-      categoryEl.textContent = project.category;
-    }
-    
-    if (titleEl && translations[lang][project.id + '.title']) {
-      titleEl.textContent = translations[lang][project.id + '.title'];
-    } else {
-      titleEl.textContent = project.title;
-    }
+    const translatedCategory = translations[lang][projKey + '.category'];
+    const translatedTitle = translations[lang][projKey + '.title'];
+
+    categoryEl.textContent = (categoryEl && translatedCategory) ? translatedCategory : project.category;
+    titleEl.textContent = (titleEl && translatedTitle) ? translatedTitle : project.title;
   }
   
   // Main content
-  document.getElementById('detailOverview').textContent = project.overview;
-  document.getElementById('detailChallenge').innerHTML = project.challenge;
-  document.getElementById('detailSolution').innerHTML = project.solution;
-  document.getElementById('detailResults').textContent = project.results;
+  // Attempt to load localized content for the project's sections if available
+
+  const overviewEl = document.getElementById('detailOverview');
+  const challengeEl = document.getElementById('detailChallenge');
+  const solutionEl = document.getElementById('detailSolution');
+  const resultsEl = document.getElementById('detailResults');
+
+  if (translations[lang] && translations[lang][projKey + '.overview']) {
+    overviewEl.innerHTML = translations[lang][projKey + '.overview'];
+  } else if (overviewEl) {
+    overviewEl.textContent = project.overview;
+  }
+
+  if (translations[lang] && translations[lang][projKey + '.challenge']) {
+    challengeEl.innerHTML = translations[lang][projKey + '.challenge'];
+  } else if (challengeEl) {
+    challengeEl.innerHTML = project.challenge;
+  }
+
+  if (translations[lang] && translations[lang][projKey + '.solution']) {
+    solutionEl.innerHTML = translations[lang][projKey + '.solution'];
+  } else if (solutionEl) {
+    solutionEl.innerHTML = project.solution;
+  }
+
+  if (translations[lang] && translations[lang][projKey + '.results']) {
+    resultsEl.innerHTML = translations[lang][projKey + '.results'];
+  } else if (resultsEl) {
+    resultsEl.textContent = project.results;
+  }
   
-  // Services
+  // Services - with translation support
   const servicesContainer = document.getElementById('detailServices');
-  servicesContainer.innerHTML = project.services.map(service => 
+
+  // Try to get translated services, fallback to English
+  const translatedServices = project.services.map((service, index) => {
+    const serviceKey = `${projKey}.services.${index + 1}`;
+    if (translations[lang] && translations[lang][serviceKey]) {
+      return translations[lang][serviceKey];
+    }
+    return service;
+  });
+
+  servicesContainer.innerHTML = translatedServices.map(service =>
     `<li>${service}</li>`
   ).join('');
   
@@ -376,10 +409,9 @@ function loadRelatedProjects(currentProjectId) {
   const relatedProjects = allProjects.filter(p => p.id !== currentProjectId).slice(0, 5);
   
   relatedContainer.innerHTML = relatedProjects.map(project => {
-    const categoryKey = project.id + '.category';
-    const titleKey = project.id + '.title';
-    const category = (translations && translations[lang] && translations[lang][categoryKey]) ? translations[lang][categoryKey] : project.category;
-    const title = (translations && translations[lang] && translations[lang][titleKey]) ? translations[lang][titleKey] : project.title;
+    const projKey = project.id.replace('-', '.');
+    const category = (translations && translations[lang] && translations[lang][projKey + '.category']) ? translations[lang][projKey + '.category'] : project.category;
+    const title = (translations && translations[lang] && translations[lang][projKey + '.title']) ? translations[lang][projKey + '.title'] : project.title;
     
     return `
     <a href="card-details.html?id=${project.id}" class="related-card">
@@ -445,19 +477,22 @@ document.addEventListener('DOMContentLoaded', loadProjectDetails);
 window.addEventListener('langChanged', (e) => {
   const lang = e.detail.lang;
   const translations = window.translations;
-  
+
   if (translations && translations[lang]) {
     const backLink = document.querySelector('.back-btn');
     const relatedTitle = document.querySelector('.related-title');
-    
+
     if (backLink && translations[lang]['details.back']) {
       const span = backLink.querySelector('span');
       if (span) span.textContent = translations[lang]['details.back'];
     }
-    
+
     if (relatedTitle && translations[lang]['details.related']) {
       relatedTitle.textContent = translations[lang]['details.related'];
     }
+
+    // Reload project details to update all translated content
+    loadProjectDetails();
   }
 });
 
