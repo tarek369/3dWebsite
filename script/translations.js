@@ -452,22 +452,34 @@ function updatePageTitle(lang) {
 
 // Role: Initialize language switcher on page load
 function initLanguage() {
-  // Create language toggle button if it doesn't exist
-  if (!document.getElementById('langToggle')) {
-    const nav = document.querySelector('nav') || document.querySelector('.contact-nav');
+  let langBtn;
+
+  // Check if button already exists (e.g., in card-details.html)
+  langBtn = document.getElementById('langToggle');
+
+  // If not, create it
+  if (!langBtn) {
+    const nav = document.querySelector('nav') || document.querySelector('.contact-nav') || document.querySelector('.detail-nav');
     if (nav) {
-      const langBtn = document.createElement('button');
+      langBtn = document.createElement('button');
       langBtn.id = 'langToggle';
       langBtn.className = 'lang-toggle';
       langBtn.textContent = currentLang === 'en' ? '🇬🇧' : '🇪🇪';
       langBtn.setAttribute('aria-label', 'Switch language');
       nav.appendChild(langBtn);
-
-      langBtn.addEventListener('click', () => {
-        const newLang = currentLang === 'en' ? 'et' : 'en';
-        setLanguage(newLang);
-      });
     }
+  }
+
+  // Attach click handler to existing or new button
+  if (langBtn) {
+    // Remove any existing listeners to prevent duplicates
+    const newBtn = langBtn.cloneNode(true);
+    langBtn.parentNode.replaceChild(newBtn, langBtn);
+
+    newBtn.addEventListener('click', () => {
+      const newLang = currentLang === 'en' ? 'et' : 'en';
+      setLanguage(newLang);
+    });
   }
 
   // Apply current language
