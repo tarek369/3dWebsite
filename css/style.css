@@ -106,11 +106,14 @@ nav a:hover { color: #04e3b2; }
 }
 
 /* Role: Staggered animation delays and highlighted color for specific words to create emphasis. */
-.hero-title .word:nth-child(1) { animation-delay: 0.2s; }
-.hero-title .word:nth-child(2) { animation-delay: 0.5s; color: #04e3b2; }
-.hero-title .word:nth-child(3) { animation-delay: 0.8s; }
-.hero-title .word:nth-child(4) { animation-delay: 1.1s; color: #04e3b2; }
-.hero-title .word:nth-child(5) { animation-delay: 1.4s; }
+.hero-title .word:nth-child(1) { animation-delay: 0.20s; }
+.hero-title .word:nth-child(2) { animation-delay: 0.38s; color: #04e3b2; }
+.hero-title .word:nth-child(3) { animation-delay: 0.56s; }
+.hero-title .word:nth-child(4) { animation-delay: 0.74s; }
+.hero-title .word:nth-child(5) { animation-delay: 0.92s; color: #04e3b2; }
+.hero-title .word:nth-child(6) { animation-delay: 1.10s; }
+.hero-title .word:nth-child(7) { animation-delay: 1.28s; }
+.hero-title .word:nth-child(8) { animation-delay: 1.46s; }
 
 /* Role: Keyframe used by the headline word animation to slide up and fade in. */
 @keyframes slideUpFade {
@@ -1551,3 +1554,8 @@ nav a:hover { color: #04e3b2; }
     padding: 10px;
   }
 }
+
+/* Role: 'Learn more' link on each service card, pointing at the dedicated service page. */
+.service-link{display:inline-block;margin-top:12px;color:#04e3b2;text-decoration:none;
+  font-weight:600;font-size:.92rem;letter-spacing:.02em;}
+.service-link:hover{text-decoration:underline;}

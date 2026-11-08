@@ -1,0 +1,26 @@
+/* Role: Scoped styles for the /services/ detail pages. Kept separate from style.css
+   so the landing page cannot be affected by changes here. */
+.svc-wrap{max-width:860px;margin:0 auto;padding:140px 24px 90px;color:#e8f1f5;}
+.svc-crumb{font-size:.82rem;letter-spacing:.04em;opacity:.7;margin-bottom:26px;}
+.svc-crumb a{color:#04e3b2;text-decoration:none;}
+.svc-crumb a:hover{text-decoration:underline;}
+.svc-wrap h1{font-size:clamp(1.9rem,4.4vw,3rem);line-height:1.14;margin:0 0 22px;font-weight:700;}
+.svc-lede{font-size:1.16rem;line-height:1.65;opacity:.93;margin-bottom:48px;}
+.svc-wrap h2{font-size:1.42rem;margin:48px 0 18px;color:#04e3b2;font-weight:600;}
+.svc-wrap h3{font-size:1.06rem;margin:24px 0 7px;font-weight:600;}
+.svc-wrap p{line-height:1.72;opacity:.9;margin:0 0 14px;}
+.svc-hero-img{width:100%;height:auto;border-radius:10px;margin:0 0 44px;display:block;}
+.svc-list{list-style:none;padding:0;margin:0;}
+.svc-list li{padding:17px 0;border-bottom:1px solid rgba(255,255,255,.12);}
+.svc-list li strong{display:block;margin-bottom:5px;color:#fff;}
+.svc-steps{counter-reset:s;list-style:none;padding:0;margin:0;}
+.svc-steps li{counter-increment:s;padding:15px 0 15px 46px;position:relative;line-height:1.65;opacity:.9;}
+.svc-steps li::before{content:counter(s);position:absolute;left:0;top:13px;width:28px;height:28px;
+  border-radius:50%;background:#04e3b2;color:#002c40;font-weight:700;font-size:.85rem;
+  display:flex;align-items:center;justify-content:center;}
+.svc-cta{margin-top:56px;padding:30px;border:1px solid rgba(4,227,178,.4);border-radius:10px;background:rgba(4,227,178,.07);}
+.svc-cta a{display:inline-block;margin-top:12px;background:#04e3b2;color:#002c40;padding:12px 26px;
+  border-radius:6px;text-decoration:none;font-weight:600;}
+.svc-related{margin-top:42px;font-size:.95rem;opacity:.88;}
+.svc-related a{color:#04e3b2;}
+@media(max-width:640px){.svc-wrap{padding:110px 18px 64px;}}
