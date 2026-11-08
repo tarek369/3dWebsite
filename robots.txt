@@ -1,0 +1,10 @@
+# robots.txt for 3dxenon.com
+User-agent: *
+Allow: /
+
+# Internal demo / prototype pages - live but intentionally not indexed
+Disallow: /cash.html
+Disallow: /season.html
+Disallow: /video.html
+
+Sitemap: https://www.3dxenon.com/sitemap.xml

@@ -427,24 +427,26 @@ function updatePageTitle(lang) {
   const path = window.location.pathname;
   let titleKey = '';
 
+  // Role: card-details sets its own per-project title in card-details.js — do not overwrite it here.
+  if (path.includes('card-details')) {
+    return;
+  }
+
   if (path.includes('contact')) {
-    titleKey = 'contact.title';
-  } else if (path.includes('card-details')) {
-    titleKey = 'Project Details - 3DXENON';
+    titleKey = 'Contact 3DXENON — Digital Twin & 3D Visualization Studio';
   } else if (path.includes('season')) {
-    titleKey = 'Seasonal Video Viewer';
+    titleKey = 'Seasonal Video Viewer — 3DXENON';
   } else if (path.includes('cash')) {
-    titleKey = 'Spatial Media — Video Hero';
+    titleKey = 'Spatial Media — 3DXENON';
   } else {
-    titleKey = '3DXENON— Video Feed';
+    titleKey = '3DXENON — Digital Twins & 3D Visualization Studio';
   }
 
   if (lang === 'et') {
-    if (path.includes('contact')) titleKey = 'Kontakt - 3DXENON';
-    else if (path.includes('card-details')) titleKey = 'Projekti üksikasju - 3DXENON';
-    else if (path.includes('season')) titleKey = 'Soojaga video vaataja';
-    else if (path.includes('cash')) titleKey = 'Ruumiline meedia — Video kangelane';
-    else titleKey = '3DXENON— Video voog';
+    if (path.includes('contact')) titleKey = 'Kontakt — 3DXENON digitaalsed kaksikud ja 3D visualiseerimine';
+    else if (path.includes('season')) titleKey = 'Hooajaline videovaataja — 3DXENON';
+    else if (path.includes('cash')) titleKey = 'Ruumiline meedia — 3DXENON';
+    else titleKey = '3DXENON — Digitaalsed kaksikud ja 3D visualiseerimine';
   }
 
   document.title = titleKey;

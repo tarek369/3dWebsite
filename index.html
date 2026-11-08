@@ -1,13 +1,71 @@
 <!-- Role: Main HTML file for the 3DXENON landing page. Contains site structure, metadata, styles/scripts links, and main site sections (hero, services, about, clients, case studies, footer). Do not change code — only comments added above each logical block to explain purpose. -->
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <!-- Role: Document metadata and responsive viewport settings. -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  
+
   <!-- Role: Page title shown in browser tab and search results. -->
-  <title>3DXENON— Video Feed</title>
+  <title>3DXENON — Digital Twins &amp; 3D Visualization Studio</title>
+
+  <!-- Role: SEO metadata. Description is shown in search results; canonical prevents duplicate-URL dilution. -->
+  <meta name="description" content="3DXENON builds digital twins, hyper-realistic architectural 3D visualization and interactive VR experiences for urban, energy and infrastructure projects." />
+  <link rel="canonical" href="https://www.3dxenon.com/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <!-- Role: Open Graph / Twitter cards for link previews on social and chat platforms. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="3DXENON" />
+  <meta property="og:locale" content="en" />
+  <meta property="og:url" content="https://www.3dxenon.com/" />
+  <meta property="og:title" content="3DXENON — Digital Twins &amp; 3D Visualization Studio" />
+  <meta property="og:description" content="Digital twins, architectural 3D visualization and interactive VR experiences for urban, energy and infrastructure projects." />
+  <meta property="og:image" content="https://www.3dxenon.com/res/work54.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="3DXENON — Digital Twins &amp; 3D Visualization Studio" />
+  <meta name="twitter:description" content="Digital twins, architectural 3D visualization and interactive VR experiences for urban, energy and infrastructure projects." />
+  <meta name="twitter:image" content="https://www.3dxenon.com/res/work54.webp" />
+
+  <!-- Role: Structured data. Tells search engines what the organisation is and what it offers. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.3dxenon.com/#organization",
+        "name": "3DXENON",
+        "url": "https://www.3dxenon.com/",
+        "logo": "https://www.3dxenon.com/res/logo.png",
+        "description": "Digital twin, 3D visualization and immersive media studio.",
+        "email": "info@3dxenon.com"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.3dxenon.com/#website",
+        "url": "https://www.3dxenon.com/",
+        "name": "3DXENON",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://www.3dxenon.com/#organization" }
+      },
+      {
+        "@type": "ProfessionalService",
+        "name": "3DXENON",
+        "url": "https://www.3dxenon.com/",
+        "parentOrganization": { "@id": "https://www.3dxenon.com/#organization" },
+        "serviceType": [
+          "Digital Twins",
+          "Architectural 3D Visualization",
+          "Interactive 3D & Web Experiences",
+          "Urban & Infrastructure Digital Twins",
+          "Energy & Environmental Analytics",
+          "Virtual Reality Production"
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Role: Load web font (Roboto). Improves typography consistency across devices. -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -31,7 +89,7 @@
   <header>
     <!-- Role: Brand/logo area: image + company name. Keeps brand identity consistent. -->
     <div class="logo">
-      <img src="res/logo.png" alt="Logo">
+      <img src="res/logo.png" alt="3DXENON logo" width="48" height="48">
       3DXENON
     </div>
     <!-- Role: Primary navigation links to key sections and contact page. -->
@@ -171,7 +229,7 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
       <!-- Card 2: Villa / Hyper-Realistic Visuals project. -->
       <a href="card-details.html?id=project-2" class="work-card" data-work-animate>
         <div class="work-card-image">
-          <img src="res/work2.png" alt="Hyper-Realistic Visuals">
+          <img src="res/work2.webp" alt="Hyper-Realistic Visuals" loading="lazy" decoding="async">
           <div class="work-card-overlay">
             <div class="work-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -204,7 +262,7 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
       <!-- Card 6 : Residential Complex project. Link includes id query for details page to load content dynamically. -->
       <a href="card-details.html?id=project-6" class="work-card" data-work-animate>
         <div class="work-card-image">
-          <img src="res/service2.png" alt="Building & Infrastructure Twins">
+          <img src="res/service2.webp" alt="Building & Infrastructure Twins" loading="lazy" decoding="async">
           <div class="work-card-overlay">
             <div class="work-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -238,7 +296,7 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
       <!-- Card 4: AI-enhanced analytics project for parking/solar/energy scenarios. -->
       <a href="card-details.html?id=project-4" class="work-card" data-work-animate>
         <div class="work-card-image">
-          <img src="res/service6.png" alt="AI-Enhanced Analytics">
+          <img src="res/service6.webp" alt="AI-Enhanced Analytics" loading="lazy" decoding="async">
           <div class="work-card-overlay">
             <div class="work-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -272,7 +330,7 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
         : Residential Complex project. Link includes id query for details page to load content dynamically. -->
       <a href="card-details.html?id=project-5" class="work-card" data-work-animate>
         <div class="work-card-image">
-          <img src="res/work54.png" alt="Building & Infrastructure Twins">
+          <img src="res/work54.webp" alt="Building & Infrastructure Twins" loading="lazy" decoding="async">
           <div class="work-card-overlay">
             <div class="work-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -304,7 +362,7 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
       <!-- Card 1: Residential Complex project. Link includes id query for details page to load content dynamically. -->
       <a href="card-details.html?id=project-1" class="work-card" data-work-animate>
         <div class="work-card-image">
-          <img src="res/service4.png" alt="Building & Infrastructure Twins">
+          <img src="res/service4.webp" alt="Building & Infrastructure Twins" loading="lazy" decoding="async">
           <div class="work-card-overlay">
             <div class="work-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -337,7 +395,7 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
       <!-- Card 3: Urban planning digital twin project. Links to details via id query. -->
       <a href="card-details.html?id=project-3" class="work-card" data-work-animate>
         <div class="work-card-image">
-          <img src="res/service5.png" alt="Urban Planning Digital Twin">
+          <img src="res/service5.png" alt="Urban Planning Digital Twin" loading="lazy" decoding="async">
           <div class="work-card-overlay">
             <div class="work-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -382,54 +440,54 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
       <div class="logos-track" id="logosTrack">
         <!-- First Set of Logos -->
         <div class="logo-item">
-          <img src="images/logos/client1.png" alt="Client 1">
+          <img src="images/logos/client1.png" alt="Client logo 1 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client2.png" alt="Client 2">
+          <img src="images/logos/client2.png" alt="Client logo 2 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client3.png" alt="Client 3">
+          <img src="images/logos/client3.png" alt="Client logo 3 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client4.png" alt="Client 4">
+          <img src="images/logos/client4.png" alt="Client logo 4 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client5.png" alt="Client 5">
+          <img src="images/logos/client5.png" alt="Client logo 5 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client6.png" alt="Client 6">
+          <img src="images/logos/client6.png" alt="Client logo 6 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client7.png" alt="Client 7">
+          <img src="images/logos/client7.png" alt="Client logo 7 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client8.png" alt="Client 8">
+          <img src="images/logos/client8.png" alt="Client logo 8 — 3DXENON" loading="lazy" decoding="async">
         </div>
         
         <!-- Duplicate Set for Seamless Loop -->
         <div class="logo-item">
-          <img src="images/logos/client1.png" alt="Client 1">
+          <img src="images/logos/client1.png" alt="Client logo 1 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client2.png" alt="Client 2">
+          <img src="images/logos/client2.png" alt="Client logo 2 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client3.png" alt="Client 3">
+          <img src="images/logos/client3.png" alt="Client logo 3 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client4.png" alt="Client 4">
+          <img src="images/logos/client4.png" alt="Client logo 4 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client5.png" alt="Client 5">
+          <img src="images/logos/client5.png" alt="Client logo 5 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client6.png" alt="Client 6">
+          <img src="images/logos/client6.png" alt="Client logo 6 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client7.png" alt="Client 7">
+          <img src="images/logos/client7.png" alt="Client logo 7 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client8.png" alt="Client 8">
+          <img src="images/logos/client8.png" alt="Client logo 8 — 3DXENON" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -439,54 +497,54 @@ The Digital Twin is the revolutionary technology that gives you unprecedented, c
       <div class="logos-track logos-track-reverse" id="logosTrackReverse">
         <!-- First Set of Logos -->
         <div class="logo-item">
-          <img src="images/logos/client9.png" alt="Client 9">
+          <img src="images/logos/client9.png" alt="Client logo 9 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client10.png" alt="Client 10">
+          <img src="images/logos/client10.png" alt="Client logo 10 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client11.png" alt="Client 11">
+          <img src="images/logos/client11.png" alt="Client logo 11 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client12.png" alt="Client 12">
+          <img src="images/logos/client12.png" alt="Client logo 12 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client13.png" alt="Client 13">
+          <img src="images/logos/client13.png" alt="Client logo 13 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client14.png" alt="Client 14">
+          <img src="images/logos/client14.png" alt="Client logo 14 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client15.png" alt="Client 15">
+          <img src="images/logos/client15.png" alt="Client logo 15 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client16.png" alt="Client 16">
+          <img src="images/logos/client16.png" alt="Client logo 16 — 3DXENON" loading="lazy" decoding="async">
         </div>
         
         <!-- Duplicate Set for Seamless Loop -->
         <div class="logo-item">
-          <img src="images/logos/client9.png" alt="Client 9">
+          <img src="images/logos/client9.png" alt="Client logo 9 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client10.png" alt="Client 10">
+          <img src="images/logos/client10.png" alt="Client logo 10 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client11.png" alt="Client 11">
+          <img src="images/logos/client11.png" alt="Client logo 11 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client12.png" alt="Client 12">
+          <img src="images/logos/client12.png" alt="Client logo 12 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client13.png" alt="Client 13">
+          <img src="images/logos/client13.png" alt="Client logo 13 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client14.png" alt="Client 14">
+          <img src="images/logos/client14.png" alt="Client logo 14 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client15.png" alt="Client 15">
+          <img src="images/logos/client15.png" alt="Client logo 15 — 3DXENON" loading="lazy" decoding="async">
         </div>
         <div class="logo-item">
-          <img src="images/logos/client16.png" alt="Client 16">
+          <img src="images/logos/client16.png" alt="Client logo 16 — 3DXENON" loading="lazy" decoding="async">
         </div>
       </div>
     </div>

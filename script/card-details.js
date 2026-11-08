@@ -3,7 +3,7 @@ const projectsData = {
     id: 'project-1',
     category: 'Work Flow: Open-Plan Office Visualization',
     title: 'Interior Design- 3D Visualization',
-    image: 'res/service4.png',
+    image: 'res/service4.webp',
     overview: `
     A daylight-driven office render showcasing balanced artificial and natural light distribution. Visualization developed from basic 2D plans to test how ceiling fixtures and window systems impact working environments.`,
     challenge: `
@@ -33,8 +33,8 @@ const projectsData = {
     ],
     gallery: [
       'res/work45.png',
-      'res/work4.png',
-      'res/work42.png',
+      'res/work4.webp',
+      'res/work42.webp',
       'res/work43.png'
     ],
     // youtubeVideo: 'https://www.youtube.com/embed/aatmjpEnf2E'
@@ -44,7 +44,7 @@ const projectsData = {
     id: 'project-2',
     category: 'LUXMOD: A Contemporary Villa Study',
     title: 'Architectural Design & 3D Visualization',
-    image: 'res/work2.png',
+    image: 'res/work2.webp',
     overview: `
     A calm residential corner with a nod to Tudor architecture. This 3D visualization emphasizes light, composition, and environment to bring architectural intent to life.`,
     challenge: `
@@ -73,10 +73,10 @@ const projectsData = {
       'Concept Design Presentation'
     ],
     gallery: [
-      'res/work2.png',
-      'res/work23.png',
-      'res/work26.png',
-      'res/work25.png'
+      'res/work2.webp',
+      'res/work23.webp',
+      'res/work26.webp',
+      'res/work25.webp'
     ],
     // youtubeVideo: 'https://www.youtube.com/embed/4EXFOUzy1eE'
   },
@@ -118,7 +118,7 @@ const projectsData = {
     gallery: [
       'res/work21.png',
       'res/work22.png',
-      'res/work24.png'
+      'res/work24.webp'
     ],
     youtubeVideo: 'https://www.youtube.com/embed/BkeSDTYeY50'
     
@@ -128,7 +128,7 @@ const projectsData = {
     id: 'project-4',
     category: 'Smart City Solutions',
     title: 'DigitalTwin-Urban-SmartCity-Animation-GIS',
-    image: 'res/service6.png',
+    image: 'res/service6.webp',
     overview: `
     Urban visualization turned into a game-style navigation experience. The project utilized various modeling and optimization tools before being deployed in Unreal Engine as an interactive walk/fly-through, for Digitaltwinning purposes.
     An interactive city-scale simulation built in Unreal Engine with real GIS, BIM, and photogrammetry data.
@@ -170,9 +170,9 @@ const projectsData = {
       'Smart City Data Visualization'
     ],
     gallery: [
-      // 'res/work51.png',
-      // 'res/work52.png',
-      // 'res/work53.png'
+      // 'res/work51.webp',
+      // 'res/work52.webp',
+      // 'res/work53.webp'
     ],
     videos: [
       'https://www.youtube.com/embed/4EXFOUzy1eE',
@@ -188,7 +188,7 @@ const projectsData = {
     id: 'project-5',
     category: 'Realtime Render, Interactive VR, 3D Visualization',
     title: 'Immersive Motion: Real-Time VR & Simulations',
-    image: 'res/work54.png',
+    image: 'res/work54.webp',
     overview: `
     This real-time city environment blends technical accuracy with visual clarity. Optimized assets and performance settings were tuned for an Unreal Engine navigation tool that feels like an open-world game.`,
     challenge: `
@@ -206,7 +206,7 @@ const projectsData = {
     ],
     // single image in gallery
     gallery: [
-      'res/work54.png'
+      'res/work54.webp'
     ],
     // multiple embedded YouTube videos (use embed URLs)
     videos: [
@@ -219,7 +219,7 @@ const projectsData = {
     id: 'project-6',
     category: 'Tranquil Layers: A Contemporary Living-room Escape',
     title: '3D Visualization',
-    image: 'res/service2.png',
+    image: 'res/service2.webp',
     overview: `
     Subtle textures, layered lighting, and a calming palette come together in this Ultra Realistic 3D Living-room visualization.`,
     challenge: `
@@ -250,10 +250,10 @@ const projectsData = {
     ],
 
     gallery: [
-      'res/work3.png',
-      'res/work33.png',
-      'res/work32.png',
-      'res/work31.png'
+      'res/work3.webp',
+      'res/work33.webp',
+      'res/work32.webp',
+      'res/work31.webp'
     ],
     // youtubeVideo: 'https://www.youtube.com/embed/aatmjpEnf2E'
   },
@@ -280,6 +280,64 @@ function loadProjectDetails() {
   
   // Update page title
   document.title = `${project.title} - 3DXENON`;
+
+  // Role: SEO — point canonical, description and social tags at THIS project, not the
+  // shared card-details.html shell. Without this all six project URLs look identical
+  // to a crawler and get collapsed as duplicates.
+  (function applyProjectSeo() {
+    const url = `https://www.3dxenon.com/card-details.html?id=${project.id}`;
+    const img = project.image
+      ? new URL(project.image, 'https://www.3dxenon.com/').href
+      : 'https://www.3dxenon.com/res/work54.webp';
+    const desc = (project.overview || project.category || project.title || '')
+      .toString().replace(/\s+/g, ' ').trim().slice(0, 157);
+
+    const canonical = document.getElementById('canonicalLink');
+    if (canonical) canonical.setAttribute('href', url);
+
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+      metaDesc = document.createElement('meta');
+      metaDesc.setAttribute('name', 'description');
+      document.head.appendChild(metaDesc);
+    }
+    if (desc) metaDesc.setAttribute('content', desc);
+
+    const set = (id, value) => {
+      const el = document.getElementById(id);
+      if (el && value) el.setAttribute('content', value);
+    };
+    set('ogTitle', `${project.title} - 3DXENON`);
+    set('ogDesc', desc);
+    set('ogImage', img);
+
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (!ogUrl) {
+      ogUrl = document.createElement('meta');
+      ogUrl.setAttribute('property', 'og:url');
+      document.head.appendChild(ogUrl);
+    }
+    ogUrl.setAttribute('content', url);
+
+    // Structured data for the individual project page.
+    const ld = document.createElement('script');
+    ld.type = 'application/ld+json';
+    ld.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'CreativeWork',
+      name: project.title,
+      url: url,
+      image: img,
+      description: desc,
+      inLanguage: 'en',
+      creator: {
+        '@type': 'Organization',
+        name: '3DXENON',
+        url: 'https://www.3dxenon.com/'
+      }
+    });
+    document.head.appendChild(ld);
+  })();
   
   // Hero section
   document.getElementById('heroImage').src = project.image;
